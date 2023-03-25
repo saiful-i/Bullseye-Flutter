@@ -17,6 +17,8 @@ class GamePage extends StatefulWidget {
 }
 
 class _GamePageState extends State<GamePage> {
+  var _alertVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,8 @@ class _GamePageState extends State<GamePage> {
             ),
             TextButton(
               onPressed: () {
-                print('Hello!');
+                _alertVisible = true;
+                _showAlert(context);
               },
               child: const Text(
                 'Hit Me!', 
@@ -46,5 +49,29 @@ class _GamePageState extends State<GamePage> {
         ),
       ),
     );
+  }
+
+  void _showAlert(BuildContext context) {
+    var okButton = TextButton(
+      onPressed: () {
+        Navigator.of(context).pop();
+        _alertVisible = false;
+        _showAlert(context);
+
+      }, 
+      child: const Text('Awesome!')
+    );
+    showDialog(
+      context: context, 
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Hello there!'),
+          content: const Text('This is my first pop-up!'),
+          actions: [
+            okButton
+          ],
+          elevation: 5,
+        );
+    });
   }
 }
