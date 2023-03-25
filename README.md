@@ -1,3 +1,3 @@
 # bullseye
 
-Bullseye Flutter Aoo from Kodeco
+Bullseye Flutter App from Kodeco
