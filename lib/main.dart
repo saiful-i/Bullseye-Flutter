@@ -17,7 +17,6 @@ class GamePage extends StatefulWidget {
 }
 
 class _GamePageState extends State<GamePage> {
-  var _alertVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,6 @@ class _GamePageState extends State<GamePage> {
             ),
             TextButton(
               onPressed: () {
-                _alertVisible = true;
                 _showAlert(context);
               },
               child: const Text(
@@ -55,7 +53,6 @@ class _GamePageState extends State<GamePage> {
     var okButton = TextButton(
       onPressed: () {
         Navigator.of(context).pop();
-        _alertVisible = false;
         _showAlert(context);
 
       }, 
