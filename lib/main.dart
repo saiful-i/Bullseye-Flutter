@@ -1,12 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
+  runApp(const BullsEyeApp());
+}
+
+class BullsEyeApp extends StatefulWidget {
+  const BullsEyeApp({super.key});
+
+  @override
+  State<BullsEyeApp> createState() => _BullsEyeAppState();
+}
+
+class _BullsEyeAppState extends State<BullsEyeApp> {
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+    return const MaterialApp(
       title: 'Bullseye',
       home: GamePage(),
-    )
-  );
+    );
+  }
 }
 
 class GamePage extends StatefulWidget {
