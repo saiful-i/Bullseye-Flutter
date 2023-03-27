@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'prompt.dart';
+import 'control.dart';
 
 void main() {
   runApp(const BullsEyeApp());
@@ -46,6 +47,7 @@ class _GamePageState extends State<GamePage> {
             const Promt(
               targetValue: 100
             ),
+            const Control(), 
             TextButton(
               onPressed: () {
                 _showAlert(context);
